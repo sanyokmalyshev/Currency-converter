@@ -1,0 +1,44 @@
+.App {
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  &__container {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    padding-top: 20px;
+    width: 100%;
+    min-height: 250px;
+    background-color: rgba(211, 216, 219, 0.674);
+  }
+
+  &__selects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    margin-bottom: 10px;
+    height: 64px;
+  }
+
+  &__arrows {
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__inputs {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+    width: 600px;
+    height: 44px;
+  }
+
+  &__input {
+    width: 150px;
+  }
+}

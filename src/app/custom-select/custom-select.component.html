@@ -1,0 +1,44 @@
+<div class="dropdown-collection">
+  <button
+    class="dropdown-button"
+    aria-haspopup="listbox"
+    aria-labelledby="dropdown-label"
+    (click)="toggleDropdown()"
+    (clickOutside)="dropdownOpen = false"
+  >
+    <span class="dropdown-label">
+      <img
+        src="{{currentValue.img}}"
+        alt=""
+        class="dropdown-img"
+      >
+      {{currentValue.type}}
+    </span>
+    <span
+      class="dropdown-value"
+      [ngClass]="{'dropdown-value--open' : dropdownOpen}"
+    ></span>
+  </button>
+  <ul
+    class="dropdown-list"
+    role="listbox"
+    aria-expanded="false"
+    [ngClass]="{'dropdown-open' : dropdownOpen}"
+  >
+    <li *ngFor="let o of options"
+      [ngClass]="{'selected' : currentValue === o}"
+      tabindex="0"
+      (click)="select(o)"
+      role="option"
+    >
+      <span class="dropdown-label">
+        <img
+          src="{{o.img}}"
+          alt=""
+          class="dropdown-img"
+        >
+        {{o.type}}
+      </span>
+    </li>
+  </ul>
+</div>
