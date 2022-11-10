@@ -1,10 +1,7 @@
 <div class="dropdown-collection">
   <button
     class="dropdown-button"
-    aria-haspopup="listbox"
-    aria-labelledby="dropdown-label"
-    (click)="toggleDropdown()"
-    (clickOutside)="dropdownOpen = false"
+    #dropdown
   >
     <span class="dropdown-label">
       <img
@@ -19,10 +16,10 @@
       [ngClass]="{'dropdown-value--open' : dropdownOpen}"
     ></span>
   </button>
+
   <ul
     class="dropdown-list"
     role="listbox"
-    aria-expanded="false"
     [ngClass]="{'dropdown-open' : dropdownOpen}"
   >
     <li *ngFor="let o of options"

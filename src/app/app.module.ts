@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SelectComponent } from './custom-select/custom-select.component';
-import { GetDataService } from './get-data.service';
+import { GetDataService } from './shared/get-data.service';
 import { LoaderComponent } from './loader/loader.component';
+
 
 @NgModule({
   declarations: [
@@ -14,6 +17,8 @@ import { LoaderComponent } from './loader/loader.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [GetDataService],
   bootstrap: [AppComponent]

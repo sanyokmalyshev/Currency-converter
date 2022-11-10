@@ -9,7 +9,7 @@
 
         <img
           class="App__arrows"
-          src="../assets/imgs/arrows.png"
+          src="./assets/imgs/arrows.png"
           alt=""
           (click)="handleChangeCurrencies()"
           *ngIf="!isLoading; else loader"
@@ -18,27 +18,25 @@
           <app-loader></app-loader>
         </ng-template>
 
-
-
         <custom-select
           [title]="'to'"
         ></custom-select>
       </div>
       <div class="App__inputs">
-        <input
-          type="text"
-          class="App__input"
-          [value]="fromInputValue"
-          (keyup)="inputChange($event)"
-          oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*?)\..*/g, '$1').replace(',', '.');"
-        >
-        <input
-          type="text"
-          class="App__input"
-          [value]="toInputValue"
-          (keyup)="inputChange($event, false)"
-          oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*?)\..*/g, '$1').replace(',', '.');"
-        >
+        <form class="App__inputs" [formGroup]="formInputs">
+          <input
+            type="text"
+            class="App__input"
+            formControlName="valueFrom"
+            (input)="onlyNumbers($event)"
+          >
+          <input
+            type="text"
+            class="App__input"
+            formControlName="valueTo"
+            (input)="onlyNumbers($event, false)"
+          >
+        </form>
       </div>
     </div>
   </div>

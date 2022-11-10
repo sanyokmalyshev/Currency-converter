@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter, OnInit } from '@angular/core';
-import { Currency } from './types/currencies';
+import { Currency } from '../types/currencies';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +8,15 @@ export class GetDataService{
   private dropdownOptions: Currency[] = [
     {
       type: 'USD',
-      img: '../../assets/imgs/usa.png'
+      img: './assets/imgs/usa.png'
     },
     {
       type: 'UAH',
-      img: '../../assets/imgs/uah.png'
+      img: './assets/imgs/uah.png'
     },
     {
       type: 'EUR',
-      img: '../../assets/imgs/eur.jpg'
+      img: './assets/imgs/eur.jpg'
     }
   ];
   changeCurrencyFrom = new EventEmitter<Currency>();
@@ -35,7 +35,6 @@ export class GetDataService{
       this.changeCurrencyFrom.emit(value);
       return;
     }
-
     this.changeCurrencyTo.emit(value);
   }
 }
